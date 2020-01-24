@@ -1,0 +1,64 @@
+:root {
+  --tile-size: calc(12.5vw - 4px);
+  --tile-minSize: 150px;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+body {
+  background: url(images/background.png);
+  background-size: contain;
+}
+
+main {
+  display: flex;
+  width: 100%;
+}
+
+article {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  align-items: center;
+  background-size: contain !important;
+  cursor: pointer;
+  display: flex;
+  height: var(--tile-size);
+  justify-content: center;
+  margin: 2px;
+  min-height: var(--tile-minSize);
+  min-width: var(--tile-minSize);
+  position: relative;
+  width: var(--tile-size);
+}
+
+img {
+  opacity: 0.75;
+  transition: 0.3s;
+  width: 100%;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+img:active {
+  transform: scale(0.95);
+}
+
+figcaption {
+  background-color: rgba(255, 255, 255.5);
+  left: 0;
+  padding: 2px 5px;
+  position: absolute;
+  top: 0;
+}
