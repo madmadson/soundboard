@@ -8,4 +8,8 @@ The easiest installation ever - just double click on index.html!
 
 ## Requirements
 
-None. Totally none. 
+None. Totally none.
+
+## Ressources
+
+Icons taken from https://game-icons.net/
