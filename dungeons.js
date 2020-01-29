@@ -1,10 +1,8 @@
 const doc = document.getElementById("content");
 let audio = undefined;
+let soundPlaying = false;
 
-const playSound = item => {
-  if (audio) {
-    audio.pause();
-  }
+const playRandomSound = item => {
 
   const file =
     sounds[item].samples[
@@ -13,8 +11,16 @@ const playSound = item => {
   audio = new Audio(`sounds/${file}`);
 
   audio.play();
+  soundPlaying = true;
   console.log(file);
 };
+
+const stopSound = () =>  {
+
+    audio.pause();
+    soundPlaying = false;
+    console.log('audio stoped');
+}
 
 const renderTiles = () => {
   for (let sound in sounds) {
@@ -31,8 +37,10 @@ const renderTiles = () => {
 document.addEventListener("click", event => {
   const item = event.target.dataset.item;
 
-  if (item) {
-    playSound(item);
+  if (item && !soundPlaying) {
+    playRandomSound(item);
+  } else {
+    stopSound()
   }
 });
 
