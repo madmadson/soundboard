@@ -14,5 +14,9 @@ const sounds = {
   creepy: {
     icon: "creepy",
     samples: ["creepy.mp3", "heartbeat.mp3"]
+  },
+  blackKnight: {
+    icon: "black-knight-helm",
+    samples: ["darkLaugh.mp3"]
   }
 };
