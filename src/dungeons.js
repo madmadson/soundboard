@@ -27,7 +27,7 @@ const renderTiles = () => {
     const tile = document.createElement("figure");
     tile.setAttribute("class", "tile");
     tile.innerHTML = `        
-            <img src="images/${sounds[sound].icon}.png" data-item="${sound}" />
+            <img src="src/images/${sounds[sound].icon}.png" data-item="${sound}" />
             <figcaption>${sound}</figcaption>
         `;
     doc.appendChild(tile);
