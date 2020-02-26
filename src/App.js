@@ -14,7 +14,13 @@ function App() {
       ];
     audio = new Audio(`sounds/${file}`);
 
-    audio.play();
+    audio.play();   
+
+    audio.onended = () => {
+      console.log("audio finsihed");
+      soundPlaying = false;
+    };
+
     soundPlaying = true;
     console.log(file);
   };
