@@ -1,4 +1,4 @@
-const sounds = {
+export default {
   door: {
     icon: "door",
     samples: ["door-lock.mp3", "creaky-door.mp3"]
@@ -16,7 +16,7 @@ const sounds = {
     samples: ["creepy.mp3", "heartbeat.mp3"]
   },
   blackKnight: {
-    icon: "black-knight-helm",
+    icon: "blackKnight",
     samples: ["darkLaugh.mp3"]
   }
 };
