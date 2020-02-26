@@ -18,5 +18,13 @@ export default {
   blackKnight: {
     icon: "blackKnight",
     samples: ["darkLaugh.mp3"]
+  },
+  spiderFace: {
+    icon: "spiderFace",
+    samples: ["insect.mp3", "growl.mp3"]
+  },
+  soul: {
+    icon: "soul",
+    samples: ["soulIsMine.mp3"]
   }
 };
