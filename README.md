@@ -85,6 +85,4 @@ Icons taken from https://game-icons.net/
 ## Deployment
 
 Firebase is great for easy deployment. Great cli. Great webui. Just easy, enough said.... 
-=======
-# soundboard
->>>>>>> 4274359bde0a8da7b4236bd759e0212e5f5f9399
+

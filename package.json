@@ -16,8 +16,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy:open": "cypress open",
+    "cy:record": "cypress run --record --key 4d9d5026-ad35-458e-a4c1-961784f6cd2f",
+    "test": "start-server-and-test start http-get://localhost:3000 cy:record"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^4.6.0",
+    "start-server-and-test": "^1.11.0"
   }
 }
