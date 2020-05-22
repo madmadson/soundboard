@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+[![Build Status](https://travis-ci.com/madmadson/soundboard.svg?branch=master)](https://travis-ci.com/madmadson/soundboard)
 
 # SOUNDBOARD
 
