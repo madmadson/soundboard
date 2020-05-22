@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
+import packageJson from '../package.json';
 
- import sounds from "./sounds";
+import sounds from "./sounds";
 
 function App() {
   let audio = undefined;
@@ -49,7 +50,10 @@ function App() {
     </figure>
   );
 
-  return  <article data-testid="content" id="content">{listOfSounds} </article>;
+  return  <>
+          <article data-testid="content" id="content">{listOfSounds} </article>
+          <footer>version: {packageJson.version}</footer>
+        </>;
 }
 
 export default App;

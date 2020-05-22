@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  font-family: 'Pinyon Script', cursive;
 }
 
 body {
@@ -60,4 +61,11 @@ figcaption {
   padding: 2px 5px;
   position: absolute;
   top: 0;
+}
+
+footer {
+  position: fixed;
+  left: 12px;
+  bottom: 0;
+  width: 100%;
 }
