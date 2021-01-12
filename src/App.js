@@ -1,6 +1,5 @@
-import React from "react";
 import "./App.css";
-import packageJson from '../package.json';
+import packageJson from "../package.json";
 
 import sounds from "./sounds";
 
@@ -15,7 +14,7 @@ function App() {
       ];
     audio = new Audio(`sounds/${file}`);
 
-    audio.play();   
+    audio.play();
 
     audio.onended = () => {
       console.log("audio finsihed");
@@ -33,27 +32,34 @@ function App() {
   };
 
   const onFigureclick = (e) => {
-
     const clickedSound = e.target.dataset.item;
     if (clickedSound && !soundPlaying) {
       playRandomSound(clickedSound);
     } else {
-      stopSound()
+      stopSound();
     }
-  }
+  };
 
-  
-  const listOfSounds = Object.values(sounds).map(it => 
+  const listOfSounds = Object.values(sounds).map((it) => (
     <figure key={it.icon} className="tile">
-      <img onClick={onFigureclick} data-item={it.icon} alt={it.icon} src={`images/${it.icon}.png`} />
+      <img
+        onClick={onFigureclick}
+        data-item={it.icon}
+        alt={it.icon}
+        src={`images/${it.icon}.png`}
+      />
       <figcaption>{it.icon}</figcaption>
     </figure>
-  );
+  ));
 
-  return  <>
-          <article data-testid="content" id="content">{listOfSounds} </article>
-          <footer>version: {packageJson.version}</footer>
-        </>;
+  return (
+    <>
+      <article data-testid="content" id="content">
+        {listOfSounds}{" "}
+      </article>
+      <footer>version: {packageJson.version}</footer>
+    </>
+  );
 }
 
 export default App;

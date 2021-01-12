@@ -2,8 +2,7 @@ const doc = document.getElementById("content");
 let audio = undefined;
 let soundPlaying = false;
 
-const playRandomSound = item => {
-
+const playRandomSound = (item) => {
   const file =
     sounds[item].samples[
       Math.floor(Math.random() * sounds[item].samples.length)
@@ -15,12 +14,11 @@ const playRandomSound = item => {
   console.log(file);
 };
 
-const stopSound = () =>  {
-
-    audio.pause();
-    soundPlaying = false;
-    console.log('audio stoped');
-}
+const stopSound = () => {
+  audio.pause();
+  soundPlaying = false;
+  console.log("audio stoped");
+};
 
 const renderTiles = () => {
   for (let sound in sounds) {
@@ -34,13 +32,13 @@ const renderTiles = () => {
   }
 };
 
-document.addEventListener("click", event => {
+document.addEventListener("click", (event) => {
   const item = event.target.dataset.item;
 
   if (item && !soundPlaying) {
     playRandomSound(item);
   } else {
-    stopSound()
+    stopSound();
   }
 });
 

@@ -1,12 +1,9 @@
-
-
-describe('Load app', () => {
+describe("Load app", () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit("/");
   });
 
-  it('go to home ', () => {
-    cy.get('[data-testid="content"]').should('be.visible')
-      
+  it("go to home ", () => {
+    cy.get('[data-testid="content"]').should("be.visible");
   });
 });
