@@ -1,4 +1,4 @@
-import sounds from "../sounds";
+import SoundsMap from "./SoundsMap";
 
 import styles from "./DndSounds.module.css";
 
@@ -8,8 +8,8 @@ function DndSounds() {
 
   const playRandomSound = (item) => {
     const file =
-      sounds[item].samples[
-        Math.floor(Math.random() * sounds[item].samples.length)
+      SoundsMap[item].samples[
+        Math.floor(Math.random() * SoundsMap[item].samples.length)
       ];
     audio = new Audio(`sounds/${file}`);
 
@@ -24,8 +24,45 @@ function DndSounds() {
     console.log(file);
   };
 
+  const importAll = (allSongs) => {
+    return allSongs.keys().map((name) => {
+      // remove ./ before each filename
+      return name.substring(2);
+    });
+  };
+
+  const playAmberSoundsInLoop = () => {
+    soundPlaying = true;
+
+    const listOfSongs = importAll(
+      require.context("../../public/sounds/amber", false, /\.(mp3)$/)
+    );
+
+    audio = new Audio(`sounds/amber/${listOfSongs[0]}`);
+
+    audio.play();
+    audio.volume = 0.2;
+    audio.onended = () => {
+      soundPlaying = false;
+    };
+    audio.addEventListener("loadeddata", () => {
+      let volume = audio.volume;
+      let duration = audio.duration;
+      let src = audio.src;
+
+      console.log(`volume: ${volume}`);
+      console.log(`duration: ${duration}`);
+      console.log(`src: ${src}`);
+    });
+
+    setTimeout(() => {
+      audio.volume = 0.2;
+      audio.pause();
+    }, 1000);
+  };
+
   const stopSound = () => {
-    audio.pause();
+    audio && audio.pause();
     soundPlaying = false;
     console.log("audio stoped");
   };
@@ -39,7 +76,15 @@ function DndSounds() {
     }
   };
 
-  const listOfSounds = Object.values(sounds).map((it) => (
+  const onAmberClick = () => {
+    if (!soundPlaying) {
+      playAmberSoundsInLoop();
+    } else {
+      stopSound();
+    }
+  };
+
+  const listOfSounds = Object.values(SoundsMap).map((it) => (
     <figure key={it.icon} className={styles.tile}>
       <img
         className={styles.tileImage}
@@ -59,6 +104,17 @@ function DndSounds() {
       id="content"
     >
       {listOfSounds}
+      <figure key={"amber"} className={styles.tile}>
+        <img
+          className={styles.tileImage}
+          onClick={onAmberClick}
+          data-item={"amber"}
+          alt={"amber"}
+          src={`images/amber.jpg`}
+        />
+        <figcaption className={styles.tileCaption}>amber</figcaption>
+      </figure>
+      <audio controls></audio>
     </article>
   );
 }
