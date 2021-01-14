@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/madmadson/soundboard.svg?branch=master)](https://travis-ci.com/madmadson/soundboard)
 
 # SOUNDBOARD
 
@@ -77,7 +76,6 @@ Just build it with production build in /build and say firebase deploy.
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 
-
 ## Ressources
 
 Icons taken from https://game-icons.net/
@@ -85,6 +83,3 @@ Icons taken from https://game-icons.net/
 ## Deployment
 
 Firebase is great for easy deployment. Great cli. Great webui. Just easy, enough said.... 
-
-NATA was here
-
